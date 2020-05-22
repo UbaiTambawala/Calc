@@ -1,0 +1,41 @@
+# Simple calculator
+
+import os
+import cmath
+
+os.system('cls')
+
+
+Q = str(input("Do you want to use the calculator Y or N: "))
+while Q.upper() == "N": 
+   # Added colour code to make code more fancy 
+    print("\u001b[34mBye")
+    break
+if Q != "Y" or "N":
+    print("Invalid ")
+while Q.upper() == "Y":
+    print("Chose your operation \n: 1.Add \n: 2.Subtract \n: 3.Multiply \n: 4.Divide \n: 5.Power \n: 6.Quadratic formuala \n: 7.Square Root \n Enter 1, 2, 3, 4, 5, 6 or 7")
+    choice = input(" Enter your Number: ")
+    num1 = float(input("Please enter your first number: "))
+    num2 = float(input("Please enter your second number: "))
+    if choice == "1":
+        print("Your answer is", num1 + num2)
+    elif choice == "2":
+        print("Your answer is", num1 - num2)
+    elif choice == "3":
+        print("Your answer is", num1 * num2)
+    elif choice == "4":
+        print("Your answer is", num1 / num2)
+    elif choice == "5":
+        print("Your answer", num1**num2)
+    elif choice == "6":
+        num3 = float(input("Enter third number for quadratic equation: "))
+        num4 = (num2*2) - (4*num1*num3)
+        ans1 = (-num2-cmath.sqrt(num4))/(2*num1)
+        ans2 = (-num2+cmath.sqrt(num4))/(2*num1)
+        print("\u001b[34mYour answer is", ans1,ans2)
+    elif choice == "7":
+        print("Yor answer is", cmath.sqrt(num1))
+    else:
+        print(" \u001b[31mEnter correct operation!")
+    Q = str(input("Do you still want to use the calculator Y or N: "))
